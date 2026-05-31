@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://b62nophl4dsjk"]
+
+[ext_resource type="Script" uid="uid://ml8heig5as8a" path="res://_projectiles/_projectile.gd" id="1_jtjim"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="2_try7b"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4lxd"]
+radius = 5.0
+
+[node name="Triple" type="Node2D" groups=["Bullets"]]
+script = ExtResource("1_jtjim")
+damage = 15
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Bullets"]]
+position = Vector2(-3, 0)
+texture = ExtResource("2_try7b")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." groups=["Bullets"]]
+position = Vector2(4, 0)
+texture = ExtResource("2_try7b")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." groups=["Bullets"]]
+position = Vector2(0.5, 0)
+texture = ExtResource("2_try7b")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Collision Area" type="Area2D" parent="." groups=["Bullets"]]
+
+[node name="Collider" type="CollisionShape2D" parent="Collision Area" groups=["Bullets"]]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_w4lxd")

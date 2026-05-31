@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dit2polesv4tc"]
+
+[ext_resource type="Texture2D" uid="uid://b4ttxr5d0n67w" path="res://_explosions/star2.png" id="1_ety22"]
+[ext_resource type="Script" uid="uid://3erjh2d823xh" path="res://_explosions/hit.gd" id="1_ygkvq"]
+
+[node name="Hit" type="Node2D"]
+script = ExtResource("1_ygkvq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(1.5, 1.5, 1.5, 1)
+z_index = 999
+scale = Vector2(2, 2)
+texture = ExtResource("1_ety22")

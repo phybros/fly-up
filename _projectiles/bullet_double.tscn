@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqwmi44bgfdcg"]
+
+[ext_resource type="Script" uid="uid://ml8heig5as8a" path="res://_projectiles/_projectile.gd" id="1_yle7j"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="2_ntyf8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w4lxd"]
+radius = 3.0
+
+[node name="Double" type="Node2D" groups=["Bullets"]]
+script = ExtResource("1_yle7j")
+damage = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Bullets"]]
+position = Vector2(-1, 0)
+texture = ExtResource("2_ntyf8")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." groups=["Bullets"]]
+position = Vector2(2, 0)
+texture = ExtResource("2_ntyf8")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Collision Area" type="Area2D" parent="." groups=["Bullets"]]
+
+[node name="Collider" type="CollisionShape2D" parent="Collision Area" groups=["Bullets"]]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_w4lxd")

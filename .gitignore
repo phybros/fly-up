@@ -1,0 +1,34 @@
+# Godot editor/cache files
+.godot/
+
+# Godot export templates/build output
+/android/
+/build/
+/builds/
+/dist/
+/export/
+/exports/
+export_credentials.cfg
+
+# Exported game binaries/packages
+*.apk
+*.aab
+*.ipa
+*.app
+*.dmg
+*.exe
+*.pck
+*.zip
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Local logs and crash dumps
+*.log
+*.tmp
+*.bak
+crash.log

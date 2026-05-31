@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dbpgo0xppc6gt"]
+
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="1_tgx8w"]
+[ext_resource type="Script" uid="uid://be8qhhoqvohlf" path="res://_projectiles/mine.gd" id="1_voyny"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_voyny"]
+radius = 7.0
+
+[node name="Mine" type="Node2D" unique_id=1155238684 groups=["Mines"]]
+z_index = 110
+script = ExtResource("1_voyny")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=632845669]
+texture = ExtResource("1_tgx8w")
+region_enabled = true
+region_rect = Rect2(32, 24, 8, 8)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=113220402 groups=["Mines"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=995483845 groups=["Mines"]]
+shape = SubResource("CircleShape2D_voyny")

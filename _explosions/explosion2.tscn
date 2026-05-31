@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://stedhqeacvhy"]
+
+[ext_resource type="Script" uid="uid://guexmhjnk8qw" path="res://_explosions/explosion.gd" id="1_j708t"]
+[ext_resource type="Texture2D" uid="uid://bjdh8hnp6t760" path="res://63.png" id="2_s0gm3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s14k6"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(0, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v6vgx"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(64, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k475a"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(128, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cwmbr"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(192, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oh568"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(256, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oi3rd"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(320, 320, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdq7p"]
+atlas = ExtResource("2_s0gm3")
+region = Rect2(384, 320, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3q0bc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s14k6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v6vgx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k475a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cwmbr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oh568")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oi3rd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdq7p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="Explosion2" type="Node2D"]
+script = ExtResource("1_j708t")
+
+[node name="Animated Sprite" type="AnimatedSprite2D" parent="."]
+self_modulate = Color(2, 1.75, 1.75, 1)
+z_index = 999
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_3q0bc")
+autoplay = "default"
+frame = 6
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="Animated Sprite" to="." method="_on_animation_finished"]

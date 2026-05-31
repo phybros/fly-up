@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://67nnaq203gmn"]
+
+[ext_resource type="Script" uid="uid://ml8heig5as8a" path="res://_projectiles/_projectile.gd" id="1_w2mnl"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="2_4a7mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhqki"]
+radius = 2.0
+
+[node name="Bullet" type="Node2D" groups=["Bullets"]]
+z_index = 99
+script = ExtResource("1_w2mnl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["Bullets"]]
+self_modulate = Color(1, 1, 5, 1)
+position = Vector2(0.5, -1)
+texture = ExtResource("2_4a7mj")
+region_enabled = true
+region_rect = Rect2(16, 0, 8, 8)
+
+[node name="Collision Area" type="Area2D" parent="." groups=["Bullets"]]
+monitoring = false
+
+[node name="Collider" type="CollisionShape2D" parent="Collision Area" groups=["Bullets"]]
+shape = SubResource("CircleShape2D_hhqki")
+
+[node name="Death Clock" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Death Clock" to="." method="_on_death_clock_timeout"]

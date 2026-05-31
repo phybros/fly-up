@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://do67xo8y7jruj"]
+
+[ext_resource type="Script" uid="uid://c35r1sreua2ve" path="res://_asteroids/asteroid.gd" id="1_878uw"]
+[ext_resource type="PackedScene" uid="uid://os6vdli6ecuj" path="res://_asteroids/asteroid_small.tscn" id="2_kopqh"]
+[ext_resource type="PackedScene" uid="uid://stedhqeacvhy" path="res://_explosions/explosion2.tscn" id="3_bk00c"]
+[ext_resource type="Texture2D" uid="uid://ogg2fyyio2bj" path="res://SpaceShooterAssetPack_Miscellaneous.png" id="4_3g0f5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ibb4"]
+radius = 7.0
+
+[node name="Big Asteroid" type="Node2D" unique_id=2083418891 groups=["Enemies"]]
+script = ExtResource("1_878uw")
+spin_rate = 50.0
+explode_into = ExtResource("2_kopqh")
+explode_into_min = 2
+explode_into_max = 5
+score = 40
+explosions = Array[PackedScene]([ExtResource("3_bk00c")])
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=11415888 groups=["Enemies"]]
+texture = ExtResource("4_3g0f5")
+region_enabled = true
+region_rect = Rect2(16, 16, 16, 16)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=193882939 groups=["Enemies"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1987095068 groups=["Enemies"]]
+shape = SubResource("CircleShape2D_5ibb4")
+
+[node name="Direction Change Timer" type="Timer" parent="." unique_id=288642777]
+wait_time = 3.0
+autostart = true
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=269670863]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="timeout" from="Direction Change Timer" to="." method="_on_direction_change_timer_timeout"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

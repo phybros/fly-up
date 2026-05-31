@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bf5mbr5nvbb87"]
+
+[ext_resource type="Script" uid="uid://qgwobsuufij5" path="res://pickup_energy.gd" id="1_27xc7"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="1_kn7t4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8kyx"]
+atlas = ExtResource("1_kn7t4")
+region = Rect2(24, 24, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuoko"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8kyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="PickupEnergy" type="Node2D" unique_id=1250063502]
+script = ExtResource("1_27xc7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2139257984]
+z_index = 4096
+position = Vector2(0.5, -0.5)
+sprite_frames = SubResource("SpriteFrames_iuoko")

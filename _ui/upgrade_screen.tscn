@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://g8m05ohnwie2"]
+
+[ext_resource type="Texture2D" uid="uid://fhpvewopoqio" path="res://SpaceShooterAssetPack_IU.png" id="1_4plhq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpyej"]
+atlas = ExtResource("1_4plhq")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h6qg0"]
+texture = SubResource("AtlasTexture_jpyej")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="UpgradeScreen" type="Control" unique_id=700536061]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1760966936]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -64.0
+offset_right = 100.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=872957347]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_h6qg0")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=269617436]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1123185676]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=449824819]
+layout_mode = 2
+text = "UPGRADES!"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=95049329]
+layout_mode = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="UPGRADE1" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1402333389]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+
+[node name="UPGRADE2" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1844044719]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "2"
+
+[node name="UPGRADE3" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer/HBoxContainer" unique_id=2045205431]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "3
+"

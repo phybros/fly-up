@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2bjbg6725rwa"]
+
+[ext_resource type="Texture2D" uid="uid://fhpvewopoqio" path="res://SpaceShooterAssetPack_IU.png" id="1_2w6ok"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1sil"]
+atlas = ExtResource("1_2w6ok")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_leltb"]
+texture = SubResource("AtlasTexture_o1sil")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+
+[node name="Gameover" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = -36.0
+offset_right = 61.0
+offset_bottom = 51.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_leltb")
+
+[node name="Label" type="Label" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -38.0
+offset_top = 10.0
+offset_right = 38.0
+offset_bottom = 33.0
+grow_horizontal = 2
+text = "YOU DIED"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -55.5
+offset_top = -50.0
+offset_right = 55.5
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="Restart Button" type="Button" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "Restart"
+
+[node name="Quit Button" type="Button" parent="MarginContainer/Panel/HBoxContainer"]
+layout_mode = 2
+text = "Quit"

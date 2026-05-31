@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cn5wleeel8prg"]
+
+[ext_resource type="Script" uid="uid://ml8heig5as8a" path="res://_projectiles/_projectile.gd" id="1_5s7na"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="2_l3y1e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hhqki"]
+radius = 5.0
+
+[node name="Plasma Double" type="Node2D" unique_id=1291300992 groups=["Bullets"]]
+z_index = 99
+script = ExtResource("1_5s7na")
+damage = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=624279299 groups=["Bullets"]]
+position = Vector2(3.5, 1)
+texture = ExtResource("2_l3y1e")
+region_enabled = true
+region_rect = Rect2(8, 8, 8, 8)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=2099123182 groups=["Bullets"]]
+position = Vector2(-2.5, 1)
+texture = ExtResource("2_l3y1e")
+region_enabled = true
+region_rect = Rect2(8, 8, 8, 8)
+
+[node name="Collision Area" type="Area2D" parent="." unique_id=429861170 groups=["Bullets"]]
+monitoring = false
+
+[node name="Collider" type="CollisionShape2D" parent="Collision Area" unique_id=1209533937 groups=["Bullets"]]
+position = Vector2(0, 2)
+shape = SubResource("CircleShape2D_hhqki")
+
+[node name="Death Clock" type="Timer" parent="." unique_id=735904347]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Death Clock" to="." method="_on_death_clock_timeout"]

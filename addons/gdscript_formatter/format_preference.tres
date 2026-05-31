@@ -1,0 +1,21 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://dku1nfe4qmuv3"]
+
+[ext_resource type="Script" uid="uid://pgvm4l7k6qy1" path="res://addons/gdscript_formatter/scripts/preference.gd" id="1_g710b"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_oaprq"]
+alt_pressed = true
+shift_pressed = true
+pressed = true
+keycode = 70
+
+[sub_resource type="Shortcut" id="Shortcut_vogpm"]
+events = [SubResource("InputEventKey_oaprq")]
+
+[resource]
+script = ExtResource("1_g710b")
+line_length = 175
+format_on_save = true
+shortcut = SubResource("Shortcut_vogpm")
+fast_but_unsafe = false
+gdformat_command = "/Users/will/.pyenv/shims/gdformat"
+pip_command = "/Users/will/.pyenv/shims/pip"

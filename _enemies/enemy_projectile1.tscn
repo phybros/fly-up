@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://chyir0dy3ukc0"]
+
+[ext_resource type="Script" uid="uid://dkk5ncsm6pnq5" path="res://_enemies/enemy_projectile_1.gd" id="1_tsm7o"]
+[ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="2_78k7v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8esvq"]
+radius = 3.0
+
+[node name="EnemyProjectile1" type="Node2D" groups=["Enemy Projectiles"]]
+script = ExtResource("1_tsm7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+texture = ExtResource("2_78k7v")
+region_enabled = true
+region_rect = Rect2(32, 8, 8, 8)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Collision Area" type="Area2D" parent="." groups=["Enemy Projectiles"]]
+
+[node name="Collider" type="CollisionShape2D" parent="Collision Area" groups=["Enemy Projectiles"]]
+shape = SubResource("CircleShape2D_8esvq")
