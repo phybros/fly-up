@@ -160,6 +160,7 @@ offset_bottom = 60.0
 theme_override_constants/separation = 8
 
 [node name="HealthContainer" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=525060236]
+visible = false
 custom_minimum_size = Vector2(0, 12)
 layout_mode = 2
 
@@ -183,6 +184,7 @@ texture_progress = ExtResource("15_85mff")
 tint_progress = Color(0.979206, 2.83971e-06, 3.85046e-07, 1)
 
 [node name="ShieldContainer" type="HBoxContainer" parent="UI/VBoxContainer" unique_id=1861707437]
+visible = false
 layout_mode = 2
 
 [node name="ShieldIcon" type="TextureRect" parent="UI/VBoxContainer/ShieldContainer" unique_id=23515404]

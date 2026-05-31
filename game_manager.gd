@@ -1,6 +1,8 @@
 extends Node
 
-@export var health: int = 100
+const STARTING_HEALTH := 1
+
+@export var health: int = STARTING_HEALTH
 @export var score: int = 0
 @export var energy: int = 0
 @export var shield_charge: int = 0
@@ -141,7 +143,7 @@ func do_game_over():
 
 
 func do_restart():
-	health = 100
+	health = STARTING_HEALTH
 	score = 0
 	energy = 0
 	super_weapon_ready = false

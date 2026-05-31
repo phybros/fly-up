@@ -21,7 +21,7 @@ var beam_firing = false
 var velocity = Vector2.ZERO  # Current velocity
 
 const WEAPON_THREE_SHOT := 2
-const WEAPON_PLASMA := 3
+const WEAPON_PLASMA := 4
 const MINE_COUNT := 5
 const MINE_ORBIT_RADIUS := 20.0
 const MINE_ORBIT_SPEED := 2.5
