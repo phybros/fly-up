@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cj748yk0eqgv" path="res://powerup.gd" id="1_wh0le"]
 [ext_resource type="Texture2D" uid="uid://bmnpk6phemtif" path="res://powerup.png" id="2_6cuax"]
 [ext_resource type="Texture2D" uid="uid://ceeujw316flva" path="res://SpaceShooterAssetPack_Projectiles.png" id="3_to7bl"]
+[ext_resource type="Texture2D" uid="uid://ogg2fyyio2bj" path="res://SpaceShooterAssetPack_Miscellaneous.png" id="4_to7bl"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vcqqu"]
 radius = 7.071068
@@ -74,3 +75,10 @@ visible = false
 texture = ExtResource("3_to7bl")
 region_enabled = true
 region_rect = Rect2(32, 24, 8, 8)
+
+[node name="Armor" type="Sprite2D" parent="PowerupSprites" unique_id=613366881]
+unique_name_in_owner = true
+visible = false
+texture = ExtResource("4_to7bl")
+region_enabled = true
+region_rect = Rect2(24, 0, 8, 8)

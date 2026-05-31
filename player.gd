@@ -9,6 +9,7 @@ extends Node2D
 
 @onready var shield: AnimatedSprite2D = $Shield
 var shield_active := false
+var armor_active := false
 
 @onready var anim = $"Sprite Base"
 @onready var shoot_timer = $"Shoot Timer"
@@ -58,6 +59,10 @@ func _ready():
 	afterburner_l_pos = afterburner_l.position
 	afterburner_r_pos = afterburner_r.position
 	GameManager.player = self
+
+
+func activate_armor():
+	armor_active = true
 
 
 func weapon_up():
@@ -207,7 +212,11 @@ func take_damage(from: Area2D):
 	GameManager.set_shield_charge(0)
 
 	GameManager.shake_camera(10, 5)
-	GameManager.add_health(-20)
+
+	if !armor_active:
+		GameManager.add_health(-20)
+
+	armor_active = false
 
 	if GameManager.health <= 0:
 		die()

@@ -5,6 +5,7 @@ var effects: Array[StringName] = [
 	&"mines",
 	&"plasma",
 	&"3shot",
+	&"armor",
 ]
 var effect: StringName = &""
 var collected := false
@@ -25,6 +26,8 @@ func _ready():
 			%"3Shot".visible = true
 		&"plasma":
 			%Plasma3.visible = true
+		&"armor":
+			%Armor.visible = true
 
 
 func _process(delta):
@@ -63,5 +66,7 @@ func collect(body: Area2D):
 		&"plasma":
 			if player.has_method("activate_plasma"):
 				player.activate_plasma()
-
+		&"armor":
+			if player.has_method("activate_armor"):
+				player.activate_armor()
 	queue_free()
